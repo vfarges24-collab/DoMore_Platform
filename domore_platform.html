@@ -1,0 +1,954 @@
+
+<!-- saved from url=(0059)file:///Users/victoriafarges/Downloads/domore_platform.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&family=DM+Serif+Display:ital@0;1&display=swap');
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--bg:#050814;--bg2:#0d1b3e;--bg3:#0b1325;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.13);--muted:#8899bb;--blue:#38bdf8;--blue-bg:rgba(56,189,248,0.12);--blue-border:rgba(56,189,248,0.25);--green:#34d399;--green-bg:rgba(52,211,153,0.12);--green-border:rgba(52,211,153,0.22);--yellow:#fbbf24;--red:#f87171;--red-bg:rgba(248,113,113,0.12);}
+body{font-family:'DM Sans','Helvetica Neue',sans-serif;background:var(--bg);color:#fff;min-height:100vh;}
+.orb1{position:fixed;top:-80px;right:10%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(56,189,248,0.12) 0%,transparent 70%);pointer-events:none;z-index:0;}
+.orb2{position:fixed;bottom:-80px;left:5%;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.1) 0%,transparent 70%);pointer-events:none;z-index:0;}
+.app{position:relative;z-index:1;min-height:100vh;}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:rgba(5,8,20,0.9);border-bottom:1px solid var(--border);backdrop-filter:blur(8px);position:sticky;top:0;z-index:50;}
+.nav-logo{display:flex;align-items:center;gap:10px;}
+.logo-mark{background:var(--blue);color:#020e1a;width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;font-family:'DM Serif Display',serif;}
+.logo-name{font-size:19px;font-weight:700;color:#fff;letter-spacing:-.5px;}
+.logo-ch{background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-border);border-radius:999px;padding:2px 8px;font-size:10px;font-weight:700;}
+.nav-center{display:flex;gap:2px;}
+.ntab{background:transparent;border:1px solid transparent;border-radius:999px;padding:7px 16px;font-size:13px;color:var(--muted);cursor:pointer;font-family:inherit;transition:all .15s;}
+.ntab.active{background:var(--blue-bg);border-color:var(--blue-border);color:var(--blue);}
+.ntab:hover:not(.active){background:rgba(255,255,255,0.05);color:#fff;}
+.nav-right{display:flex;align-items:center;gap:8px;}
+.user-pill{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,0.04);border:1px solid var(--border2);border-radius:999px;padding:5px 12px 5px 5px;font-size:12px;cursor:pointer;color:#fff;}
+.user-av{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;}
+.role-badge{font-size:10px;padding:3px 10px;border-radius:999px;font-weight:700;cursor:pointer;border:1px solid;}
+.role-student{background:var(--green-bg);color:var(--green);border-color:var(--green-border);}
+.role-partner{background:var(--blue-bg);color:var(--blue);border-color:var(--blue-border);}
+.hero{background:linear-gradient(180deg,#0d1b3e 0%,#060d1f 100%);border-bottom:1px solid var(--border);padding:36px 28px;}
+.hero-inner{display:grid;grid-template-columns:1.3fr 0.7fr;gap:36px;align-items:center;max-width:1060px;}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.05);border:1px solid var(--border2);border-radius:999px;padding:5px 14px;font-size:12px;color:#a5b4fc;margin-bottom:16px;}
+.hero h1{font-family:'DM Serif Display',Georgia,serif;font-size:36px;line-height:1.12;margin-bottom:12px;color:#fff;}
+.hero h1 em{color:var(--blue);font-style:italic;}
+.hero p{font-size:14px;color:#c0cfe8;line-height:1.65;margin-bottom:22px;}
+.hero-btns{display:flex;gap:10px;flex-wrap:wrap;}
+.btn-blue{background:var(--blue);color:#020e1a;border:none;border-radius:10px;padding:10px 20px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;transition:opacity .15s;}
+.btn-blue:hover{opacity:.85;}
+.btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.3);border-radius:10px;padding:10px 20px;font-size:13px;cursor:pointer;font-family:inherit;transition:background .15s;}
+.btn-ghost:hover{background:rgba(255,255,255,0.07);}
+.hero-card{background:rgba(255,255,255,0.06);border:1px solid var(--border2);border-radius:20px;padding:22px;}
+.hc-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;}
+.hc-title{font-size:17px;font-weight:700;color:#fff;}
+.hc-sub{font-size:11px;color:#a0b4d0;margin-top:2px;}
+.shield{width:34px;height:34px;background:var(--blue-bg);border:1px solid var(--blue-border);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:15px;}
+.hs-big{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:13px 15px;margin-bottom:9px;}
+.hs-big .l{font-size:10px;color:#a0b4d0;text-transform:uppercase;letter-spacing:.07em;}
+.hs-big .v{font-size:26px;font-weight:700;color:var(--green);margin-top:3px;}
+.hs-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.hs-sm{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:11px 13px;}
+.hs-sm .l{font-size:10px;color:#a0b4d0;text-transform:uppercase;letter-spacing:.06em;}
+.hs-sm .v{font-size:14px;font-weight:700;margin-top:3px;color:#fff;}
+.main{max-width:1060px;padding:26px 28px;position:relative;z-index:1;}
+.stat-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:22px;}
+.sc{background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:16px;padding:15px 17px;display:flex;align-items:flex-start;justify-content:space-between;}
+.sc .ico{width:34px;height:34px;background:rgba(255,255,255,0.05);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
+.sc .l{font-size:11px;color:#a0b4d0;}
+.sc .v{font-size:19px;font-weight:700;color:#fff;margin:2px 0;}
+.sc .s{font-size:10px;color:#6a7a99;}
+.explorer{background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:20px;padding:20px;}
+.ex-title{font-family:'DM Serif Display',Georgia,serif;font-size:21px;margin-bottom:3px;color:#fff;}
+.ex-sub{font-size:12px;color:#a0b4d0;margin-bottom:16px;}
+.cats{display:flex;gap:6px;margin-bottom:18px;flex-wrap:wrap;}
+.cat{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:999px;padding:5px 14px;font-size:12px;font-weight:500;color:#a0b4d0;cursor:pointer;transition:all .15s;font-family:inherit;}
+.cat:hover{background:rgba(255,255,255,0.08);color:#fff;}
+.cat.active{background:var(--blue-bg);border-color:var(--blue-border);color:var(--blue);}
+.cat-all.active{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.2);color:#fff;}
+.content-row{display:grid;grid-template-columns:210px 1fr;gap:14px;}
+.filters{background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:16px;padding:16px;height:fit-content;}
+.f-title{font-size:13px;font-weight:700;color:#fff;margin-bottom:14px;}
+.fg{margin-bottom:14px;}
+.fl{font-size:10px;color:#a0b4d0;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px;}
+.fr{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;}
+.fv{font-size:12px;font-weight:700;color:var(--blue);}
+select.ds{width:100%;background:rgba(255,255,255,0.06);border:1px solid var(--border2);border-radius:8px;padding:7px 9px;font-size:12px;color:#fff;font-family:inherit;}
+select.ds option{background:#0d1b3e;color:#fff;}
+input[type=range]{width:100%;accent-color:var(--blue);}
+.search-input{width:100%;background:rgba(255,255,255,0.06);border:1px solid var(--border2);border-radius:8px;padding:7px 9px;font-size:12px;color:#fff;font-family:inherit;}
+.search-input::placeholder{color:#6a7a99;}
+.results{display:flex;flex-direction:column;gap:11px;}
+.results-hdr{display:flex;align-items:center;margin-bottom:6px;}
+.results-count{font-size:12px;color:#a0b4d0;}
+.act{background:var(--bg3);border:1px solid var(--border);border-radius:17px;overflow:hidden;transition:border-color .2s,transform .18s;}
+.act:hover{border-color:rgba(56,189,248,0.28);transform:translateY(-2px);}
+.act-inner{display:flex;}
+.act-img{width:125px;flex-shrink:0;position:relative;overflow:hidden;}
+.act-img img{width:100%;height:100%;object-fit:cover;display:block;}
+.img-ov{position:absolute;inset:0;background:linear-gradient(to top,#0b1325 0%,transparent 55%);}
+.disc-b{position:absolute;top:8px;left:8px;background:var(--green);color:#022c22;border-radius:999px;padding:2px 8px;font-size:10px;font-weight:800;}
+.cat-b{position:absolute;bottom:8px;left:8px;background:rgba(5,8,20,0.8);color:#fff;border-radius:6px;padding:2px 7px;font-size:10px;border:1px solid var(--border2);}
+.act-body{flex:1;padding:13px 17px;}
+.act-meta{display:flex;align-items:center;gap:7px;margin-bottom:7px;flex-wrap:wrap;}
+.city-t{font-size:11px;color:#a0b4d0;}
+.rating-t{font-size:12px;font-weight:700;color:var(--yellow);margin-left:auto;}
+.act-title{font-size:14px;font-weight:700;color:#fff;margin-bottom:2px;line-height:1.3;}
+.act-partner{font-size:11px;color:#a0b4d0;margin-bottom:9px;}
+.act-dets{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:11px;}
+.det{font-size:11px;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:7px;padding:3px 8px;color:#c0cfe8;}
+.act-footer{display:flex;align-items:center;justify-content:space-between;}
+.pb{display:flex;align-items:baseline;gap:5px;}
+.pn{font-size:21px;font-weight:700;color:var(--blue);}
+.po{font-size:12px;color:#556b88;text-decoration:line-through;}
+.sp-pill{font-size:10px;padding:3px 8px;border-radius:999px;font-weight:700;}
+.sp-ok{background:var(--green-bg);color:var(--green);border:1px solid var(--green-border);}
+.sp-warn{background:rgba(251,191,36,0.12);color:var(--yellow);border:1px solid rgba(251,191,36,0.22);}
+.sp-crit{background:var(--red-bg);color:var(--red);border:1px solid rgba(248,113,113,0.22);}
+.book-btn{background:var(--blue);color:#020e1a;border:none;border-radius:9px;padding:8px 16px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;transition:opacity .15s;}
+.book-btn:hover{opacity:.82;}
+.empty{text-align:center;padding:40px 16px;color:#a0b4d0;font-size:14px;line-height:1.6;}
+.portal{display:grid;grid-template-columns:280px 1fr;gap:16px;}
+.portal-side{display:flex;flex-direction:column;gap:12px;}
+.p-profile{background:var(--bg2);border:1px solid var(--border2);border-radius:18px;padding:20px;text-align:center;}
+.p-avatar{width:60px;height:60px;border-radius:50%;background:var(--blue-bg);border:2px solid var(--blue-border);display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto 12px;}
+.p-name{font-size:16px;font-weight:700;color:#fff;margin-bottom:3px;}
+.p-city{font-size:12px;color:#a0b4d0;margin-bottom:12px;}
+.p-stats-mini{display:grid;grid-template-columns:1fr 1fr;gap:8px;text-align:left;}
+.pm-stat{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:10px;padding:10px 12px;}
+.pm-stat .v{font-size:17px;font-weight:700;color:var(--blue);}
+.pm-stat .l{font-size:10px;color:#a0b4d0;margin-top:1px;}
+.portal-main{display:flex;flex-direction:column;gap:14px;}
+.form-card{background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:18px;padding:22px;}
+.fc-title{font-family:'DM Serif Display',Georgia,serif;font-size:20px;margin-bottom:3px;color:#fff;}
+.fc-sub{font-size:12px;color:#a0b4d0;margin-bottom:18px;}
+.df{margin-bottom:12px;}
+.df label{font-size:11px;color:#a0b4d0;display:block;margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em;}
+.df input,.df select,.df textarea{width:100%;background:rgba(255,255,255,0.06);border:1px solid var(--border2);border-radius:9px;padding:9px 11px;font-size:13px;color:#fff;font-family:inherit;transition:border-color .15s;}
+.df input:focus,.df select:focus,.df textarea:focus{outline:none;border-color:var(--blue);}
+.df input::placeholder,.df textarea::placeholder{color:#6a7a99;}
+.df select option{background:#0d1b3e;color:#fff;}
+.df textarea{min-height:70px;resize:vertical;}
+.df-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.df-row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;}
+.form-btns{display:flex;gap:8px;margin-top:4px;}
+.btn-ghost-sm{background:transparent;color:#a0b4d0;border:1px solid var(--border2);border-radius:9px;padding:9px 16px;font-size:13px;cursor:pointer;font-family:inherit;}
+.criteria{background:rgba(56,189,248,0.06);border:1px solid var(--blue-border);border-radius:14px;padding:14px 16px;margin-bottom:14px;}
+.crit-title{font-size:12px;font-weight:700;color:var(--blue);margin-bottom:10px;}
+.crit-item{display:flex;align-items:center;gap:8px;font-size:12px;color:#a0b4d0;margin-bottom:6px;}
+.crit-item:last-child{margin-bottom:0;}
+.crit-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.15);flex-shrink:0;transition:background .2s;}
+.crit-dot.ok{background:var(--green);}
+.crit-dot.bad{background:var(--red);}
+.offers-list{background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:18px;overflow:hidden;}
+.ol-hdr{padding:14px 18px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.ol-title{font-size:15px;font-weight:700;color:#fff;}
+.offer-row{padding:13px 18px;border-bottom:1px solid rgba(255,255,255,0.04);display:flex;align-items:center;gap:13px;}
+.offer-row:last-child{border-bottom:none;}
+.or-ico{width:34px;height:34px;background:rgba(255,255,255,0.05);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
+.or-info{flex:1;}
+.or-info .t{font-size:13px;font-weight:700;color:#fff;}
+.or-info .s{font-size:11px;color:#a0b4d0;margin-top:1px;}
+.or-stats{text-align:right;min-width:80px;}
+.or-stats .p{font-size:13px;font-weight:700;color:var(--blue);}
+.or-stats .b{font-size:10px;color:#a0b4d0;}
+.st{font-size:10px;padding:3px 9px;border-radius:999px;font-weight:700;}
+.st-on{background:var(--green-bg);color:var(--green);border:1px solid var(--green-border);}
+.st-off{background:rgba(255,255,255,0.04);color:#a0b4d0;border:1px solid var(--border);}
+.or-btns{display:flex;gap:5px;}
+.mb{border:1px solid var(--border2);background:transparent;border-radius:7px;padding:4px 10px;font-size:11px;cursor:pointer;color:#a0b4d0;font-family:inherit;}
+.mb.b{background:var(--blue);color:#020e1a;border-color:var(--blue);font-weight:700;}
+.mb.r{background:var(--red-bg);color:var(--red);border-color:rgba(248,113,113,0.22);}
+.modal-bg{position:fixed;inset:0;background:rgba(5,8,20,0.88);backdrop-filter:blur(7px);display:none;align-items:center;justify-content:center;padding:20px;z-index:200;}
+.modal-bg.open{display:flex;}
+.modal{background:#0d1b3e;border:1px solid var(--blue-border);border-radius:22px;padding:26px;max-width:420px;width:100%;}
+.m-hdr{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;}
+.m-title{font-size:15px;font-weight:700;color:#fff;}
+.m-sub{font-size:11px;color:#a0b4d0;margin-top:2px;}
+.m-close{background:rgba(255,255,255,0.06);border:1px solid var(--border2);border-radius:8px;padding:5px 10px;cursor:pointer;font-size:14px;color:#a0b4d0;font-family:inherit;}
+.m-info{background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:12px;padding:13px 15px;margin-bottom:15px;}
+.m-info-row{display:flex;justify-content:space-between;font-size:12px;color:#c0cfe8;margin-bottom:7px;}
+.m-price-now{font-size:24px;font-weight:700;color:var(--blue);}
+.m-price-orig{font-size:12px;color:#556b88;text-decoration:line-through;margin-left:6px;}
+.m-disc{font-size:11px;background:var(--green-bg);color:var(--green);border-radius:6px;padding:2px 8px;font-weight:700;margin-left:6px;}
+.m-fields{display:flex;flex-direction:column;gap:9px;margin-bottom:14px;}
+.m-input{background:rgba(255,255,255,0.06);border:1px solid var(--border2);border-radius:10px;padding:10px 13px;font-size:13px;color:#fff;font-family:inherit;width:100%;}
+.m-input::placeholder{color:#6a7a99;}
+.m-input:focus{outline:none;border-color:var(--blue);}
+.m-confirm{width:100%;background:var(--blue);color:#020e1a;border:none;border-radius:10px;padding:12px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;transition:opacity .15s;}
+.m-confirm:hover{opacity:.85;}
+.m-success{text-align:center;padding:10px 0;}
+.big-e{font-size:44px;margin-bottom:14px;}
+.m-ok-title{font-size:18px;font-weight:700;color:#fff;margin-bottom:8px;}
+.m-ok-sub{font-size:13px;color:#c0cfe8;line-height:1.65;}
+.m-ok-box{background:var(--green-bg);border:1px solid var(--green-border);border-radius:10px;padding:12px 14px;margin-top:14px;font-size:13px;color:var(--green);font-weight:600;}
+.toast{position:fixed;bottom:24px;right:24px;background:#0d1b3e;border:1px solid var(--green-border);border-radius:14px;padding:14px 18px;font-size:13px;color:var(--green);font-weight:600;z-index:300;display:none;align-items:center;gap:10px;box-shadow:0 8px 32px rgba(0,0,0,0.4);}
+.toast.show{display:flex;}
+</style>
+
+</head><body><div class="app">
+<div class="orb1"></div><div class="orb2"></div>
+
+<nav class="nav">
+  <div class="nav-logo">
+    <div class="logo-mark">D</div>
+    <span class="logo-name">DoMore</span>
+    <span class="logo-ch">Switzerland</span>
+  </div>
+  <div class="nav-center">
+    <button class="ntab active" onclick="switchTab(&#39;discover&#39;)">🗺 Discover</button>
+    <button class="ntab" onclick="switchTab(&#39;partner&#39;)">🤝 Partner Portal</button>
+    <button class="ntab" onclick="switchTab(&#39;membership&#39;)">🎫 Membership</button>
+  </div>
+  <div class="nav-right">
+    <div class="user-pill" onclick="toggleRole()">
+      <div class="user-av" id="userAv" style="background:var(--green-bg);border:1px solid var(--green-border);color:var(--green)">S</div>
+      <span id="userName">Student</span>
+    </div>
+    <span class="role-badge role-student" id="roleBadge" onclick="toggleRole()">Student ↔ Partner</span>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">🎟 Student membership · Free during beta</div>
+      <h1>Do more in Switzerland<br>up to <em>-50% off</em></h1>
+      <p>Exclusive discounts for students — wellness, sport, casual &amp; more.<br>20 verified partners, 24 live offers. One discount per activity.</p>
+      <div class="hero-btns">
+        <button class="btn-blue" onclick="switchTab(&#39;discover&#39;)">Browse offers</button>
+        <button class="btn-ghost" onclick="switchTab(&#39;partner&#39;)">Become a partner</button>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hc-top"><div><div class="hc-sub">Live platform</div><div class="hc-title">Simple, free, local</div></div><div class="shield">✓</div></div>
+      <div class="hs-big"><div class="l">Membership fee</div><div class="v">FREE</div></div>
+      <div class="hs-row">
+        <div class="hs-sm"><div class="l">Max discount</div><div class="v" style="color:var(--blue)">-50%</div></div>
+        <div class="hs-sm"><div class="l">Live offers</div><div class="v" id="heroCount">24</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DISCOVER -->
+<div id="tab-discover" class="main">
+  <div class="stat-strip">
+    <div class="sc"><div class="info"><div class="l">Active offers</div><div class="v" id="statTotal">24</div><div class="s">Updated in real time</div></div><div class="ico">📋</div></div>
+    <div class="sc"><div class="info"><div class="l">Membership</div><div class="v" style="color:var(--green)">FREE</div><div class="s">During beta phase</div></div><div class="ico">🎫</div></div>
+    <div class="sc"><div class="info"><div class="l">Partners</div><div class="v" id="statPartners">20</div><div class="s">Verified providers</div></div><div class="ico">🤝</div></div>
+    <div class="sc"><div class="info"><div class="l">Available spots</div><div class="v" id="statSlots">228</div><div class="s">Across all offers</div></div><div class="ico">🎯</div></div>
+  </div>
+  <div class="explorer">
+    <div class="ex-title">Browse Activities</div>
+    <div class="ex-sub">Deals posted directly by verified partners — filtered for Swiss students.</div>
+    <div class="cats" id="cats">
+      <button class="cat cat-all active" data-cat="all" onclick="setCategory(&#39;all&#39;)">✦ All</button>
+      <button class="cat" data-cat="wellness" onclick="setCategory(&#39;wellness&#39;)">♡ Wellness</button>
+      <button class="cat" data-cat="sport" onclick="setCategory(&#39;sport&#39;)">⊕ Sport</button>
+      <button class="cat" data-cat="nature" onclick="setCategory(&#39;nature&#39;)">❧ Nature</button>
+      <button class="cat" data-cat="water" onclick="setCategory(&#39;water&#39;)">〜 Water</button>
+      <button class="cat" data-cat="casual" onclick="setCategory(&#39;casual&#39;)">◎ Casual</button>
+      <button class="cat" data-cat="winter" onclick="setCategory(&#39;winter&#39;)">❄ Winter</button>
+    </div>
+    <div class="content-row">
+      <div class="filters">
+        <div class="f-title">🔍 Filters</div>
+        <div class="fg"><div class="fl">Search</div><input class="search-input" placeholder="Activity, partner, city…" id="searchFilter" oninput="renderActivities()"></div>
+        <div class="fg"><div class="fl">City</div>
+          <select class="ds" id="cityFilter" onchange="renderActivities()">
+            <option value="all">All Switzerland</option>
+            <option value="Lausanne">Lausanne</option>
+            <option value="Geneva">Geneva</option>
+            <option value="Zurich">Zurich</option>
+            <option value="Bern">Bern</option>
+            <option value="Basel">Basel</option>
+            <option value="Fribourg">Fribourg</option>
+            <option value="Montreux">Montreux</option>
+            <option value="Sion">Sion</option>
+            <option value="Verbier">Verbier</option>
+            <option value="Interlaken">Interlaken</option>
+            <option value="Zermatt">Zermatt</option>
+          </select>
+        </div>
+        <div class="fg"><div class="fr"><div class="fl">Max distance</div><div class="fv" id="distVal">100 km</div></div><input type="range" min="1" max="150" value="100" step="1" id="distFilter" oninput="document.getElementById(&#39;distVal&#39;).textContent=this.value+&#39; km&#39;;renderActivities()"></div>
+        <div class="fg"><div class="fr"><div class="fl">Max price (CHF)</div><div class="fv" id="priceVal">300</div></div><input type="range" min="1" max="400" value="300" step="1" id="priceFilter" oninput="document.getElementById(&#39;priceVal&#39;).textContent=this.value;renderActivities()"></div>
+        <div class="fg"><div class="fl">Min discount</div>
+          <select class="ds" id="discFilter" onchange="renderActivities()">
+            <option value="0">Any discount</option>
+            <option value="20">At least -20%</option>
+            <option value="30">At least -30%</option>
+            <option value="40">At least -40%</option>
+            <option value="50">At least -50%</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <div class="results-hdr"><div class="results-count" id="resultsCount">24 offers</div></div>
+        <div class="results" id="activityResults"><div class="act"><div class="act-inner">
+      <div class="act-img"><img src="./domore_platform_files/photo-1506126613408-eca07ce68773" alt="Lakeside yoga — sunrise session" loading="lazy"><div class="img-ov"></div><span class="disc-b">-40%</span><span class="cat-b">♡ wellness</span></div>
+      <div class="act-body">
+        <div class="act-meta"><span class="city-t">📍 Lausanne · 4 km</span><span class="rating-t">★ 4.8</span></div>
+        <div class="act-title">Lakeside yoga — sunrise session</div>
+        <div class="act-partner">by ZenFlow Studio</div>
+        <div class="act-dets"><span class="det">📅 5 Jun</span><span class="det">🕐 07:30</span></div>
+        <div class="act-footer">
+          <div><div class="pb"><span class="pn">CHF 21</span><span class="po">CHF 35</span></div><span class="sp-pill sp-ok">12 spots</span></div>
+          <button class="book-btn" onclick="openModal(1)">Book →</button>
+        </div>
+      </div>
+    </div></div><div class="act"><div class="act-inner">
+      <div class="act-img"><img src="./domore_platform_files/photo-1600334089648-b0d9d3028eb2" alt="Deep tissue massage — 60 min" loading="lazy"><div class="img-ov"></div><span class="disc-b">-40%</span><span class="cat-b">♡ wellness</span></div>
+      <div class="act-body">
+        <div class="act-meta"><span class="city-t">📍 Geneva · 3 km</span><span class="rating-t">★ 4.9</span></div>
+        <div class="act-title">Deep tissue massage — 60 min</div>
+        <div class="act-partner">by Body Reset Geneva</div>
+        <div class="act-dets"><span class="det">📅 8 Jun</span><span class="det">🕐 11:00</span></div>
+        <div class="act-footer">
+          <div><div class="pb"><span class="pn">CHF 72</span><span class="po">CHF 120</span></div><span class="sp-pill sp-warn">4 spots</span></div>
+          <button class="book-btn" onclick="openModal(2)">Book →</button>
+        </div>
+      </div>
+    </div></div><div class="act"><div class="act-inner">
+      <div class="act-img"><img src="./domore_platform_files/photo-1588286840104-8957b019727f" alt="Hot yoga — 90 min flow" loading="lazy"><div class="img-ov"></div><span class="disc-b">-30%</span><span class="cat-b">♡ wellness</span></div>
+      <div class="act-body">
+        <div class="act-meta"><span class="city-t">📍 Zurich · 5 km</span><span class="rating-t">★ 4.7</span></div>
+        <div class="act-title">Hot yoga — 90 min flow</div>
+        <div class="act-partner">by Heat &amp; Heal Zurich</div>
+        <div class="act-dets"><span class="det">📅 10 Jun</span><span class="det">🕐 18:30</span></div>
+        <div class="act-footer">
+          <div><div class="pb"><span class="pn">CHF 31</span><span class="po">CHF 45</span></div><span class="sp-pill sp-ok">16 spots</span></div>
+          <button class="book-btn" onclick="openModal(3)">Book →</button>
+        </div>
+      </div>
+    </div></div><div class="act"><div class="act-inner">
+      <div class="act-img"><img src="./domore_platform_files/photo-1571019613454-1cb2f99b2d8b" alt="Floatation tank — 1h session" loading="lazy"><div class="img-ov"></div><span class="disc-b">-35%</span><span class="cat-b">♡ wellness</span></div>
+      <div class="act-body">
+        <div class="act-meta"><span class="city-t">📍 Lausanne · 6 km</span><span class="rating-t">★ 4.8</span></div>
+        <div class="act-title">Floatation tank — 1h session</div>
+        <div class="act-partner">by Float Lab Lausanne</div>
+        <div class="act-dets"><span class="det">📅 12 Jun</span><span class="det">🕐 14:00</span></div>
+        <div class="act-footer">
+          <div><div class="pb"><span class="pn">CHF 62</span><span class="po">CHF 95</span></div><span class="sp-pill sp-crit">3 spots</span></div>
+          <button class="book-btn" onclick="openModal(4)">Book →</button>
+        </div>
+      </div>
+    </div></div><div class="act"><div class="act-inner">
+      <div class="act-img"><img src="./domore_platform_files/photo-1545389336-cf090694435e" alt="Guided meditation &amp; breathwork" loading="lazy"><div class="img-ov"></div><span class="disc-b">-25%</span><span class="cat-b">♡ wellness</span></div>
+      <div class="act-body">
+        <div class="act-meta"><span class="city-t">📍 Bern · 8 km</span><span class="rating-t">★ 4.6</span></div>
+        <div class="act-title">Guided meditation &amp; breathwork</div>
+        <div class="act-partner">by Mindful Bern</div>
+        <div class="act-dets"><span class="det">📅 14 Jun</span><span class="det">🕐 10:00</span></div>
+        <div class="act-footer">
+          <div><div class="pb"><span class="pn">CHF 30</span><span class="po">CHF 40</span></div><span class="sp-pill sp-ok">20 spots</span></div>
+          <button class="book-btn" onclick="openModal(5)">Book →</button>
+        </div>
+      </div>
+    </div></div><div class="act"><div class="act-inner">
+      <div class="act-img"><img src="./domore_platform_files/photo-1516592673884-4a382d1124c2" alt="Indoor climbing — beginner" loading="lazy"><div class="img-ov"></div><span class="disc-b">-40%</span><span class="cat-b">⊕ sport</span></div>
+      <div class="act-body">
+        <div class="act-meta"><span class="city-t">📍 Geneva · 11 km</span><span class="rating-t">★ 4.7</span></div>
+        <div class="act-title">Indoor climbing — beginner</div>
+        <div class="act-partner">by Vertical Hub Geneva</div>
+        <div class="act-dets"><span class="det">📅 7 Jun</span><span class="det">🕐 19:00</span></div>
+        <div class="act-footer">
+          <div><div class="pb"><span class="pn">CHF 29</span><span class="po">CHF 48</span></div><span class="sp-pill sp-ok">8 spots</span></div>
+          <button class="book-btn" onclick="openModal(6)">Book →</button>
+        </div>
+      </div>
+    </div></div><div class="act"><div class="act-inner">
+      <div class="act-img"><img src="./domore_platform_files/photo-1554068865-24cecd4e34b8" alt="Padel — 1h court + coach" loading="lazy"><div class="img-ov"></div><span class="disc-b">-30%</span><span class="cat-b">⊕ sport</span></div>
+      <div class="act-body">
+        <div class="act-meta"><span class="city-t">📍 Lausanne · 7 km</span><span class="rating-t">★ 4.6</span></div>
+        <div class="act-title">Padel — 1h court + coach</div>
+        <div class="act-partner">by SwissPadel Lausanne</div>
+        <div class="act-dets"><span class="det">📅 9 Jun</span><span class="det">🕐 18:00</span></div>
+        <div class="act-footer">
+          <div><div class="pb"><span class="pn">CHF 39</span><span class="po">CHF 55</span></div><span class="sp-pill sp-warn">4 spots</span></div>
+          <button class="book-btn" onclick="openModal(7)">Book →</button>
+        </div>
+      </div>
+    </div></div><div class="act"><div class="act-inner">
+      <div class="act-img"><img src="./domore_platform_files/photo-1549719386-74dfcbf7dbed" alt="Boxing class — foundation" loading="lazy"><div class="img-ov"></div><span class="disc-b">-35%</span><span class="cat-b">⊕ sport</span></div>
+      <div class="act-body">
+        <div class="act-meta"><span class="city-t">📍 Zurich · 4 km</span><span class="rating-t">★ 4.8</span></div>
+        <div class="act-title">Boxing class — foundation</div>
+        <div class="act-partner">by Swiss Boxing Academy</div>
+        <div class="act-dets"><span class="det">📅 11 Jun</span><span class="det">🕐 07:00</span></div>
+        <div class="act-footer">
+          <div><div class="pb"><span class="pn">CHF 27</span><span class="po">CHF 42</span></div><span class="sp-pill sp-ok">10 spots</span></div>
+          <button class="book-btn" onclick="openModal(8)">Book →</button>
+        </div>
+      </div>
+    </div></div><div class="act"><div class="act-inner">
+      <div class="act-img"><img src="./domore_platform_files/photo-1534438327276-14e5300c3a48" alt="CrossFit — drop-in class" loading="lazy"><div class="img-ov"></div><span class="disc-b">-25%</span><span class="cat-b">⊕ sport</span></div>
+      <div class="act-body">
+        <div class="act-meta"><span class="city-t">📍 Basel · 6 km</span><span class="rating-t">★ 4.5</span></div>
+        <div class="act-title">CrossFit — drop-in class</div>
+        <div class="act-partner">by CrossFit Basel</div>
+        <div class="act-dets"><span class="det">📅 13 Jun</span><span class="det">🕐 12:00</span></div>
+        <div class="act-footer">
+          <div><div class="pb"><span class="pn">CHF 29</span><span class="po">CHF 38</span></div><span class="sp-pill sp-ok">15 spots</span></div>
+          <button class="book-btn" onclick="openModal(9)">Book →</button>
+        </div>
+      </div>
+    </div></div><div class="act"><div class="act-inner">
+      <div class="act-img"><img src="./domore_platform_files/photo-1620862301989-8bf85fd02ed4" alt="Tennis — 1h private lesson" loading="lazy"><div class="img-ov"></div><span class="disc-b">-40%</span><span class="cat-b">⊕ sport</span></div>
+      <div class="act-body">
+        <div class="act-meta"><span class="city-t">📍 Geneva · 9 km</span><span class="rating-t">★ 4.9</span></div>
+        <div class="act-title">Tennis — 1h private lesson</div>
+        <div class="act-partner">by Tennis Club Champel</div>
+        <div class="act-dets"><span class="det">📅 15 Jun</span><span class="det">🕐 16:00</span></div>
+        <div class="act-footer">
+          <div><div class="pb"><span class="pn">CHF 54</span><span class="po">CHF 90</span></div><span class="sp-pill sp-crit">2 spots</span></div>
+          <button class="book-btn" onclick="openModal(10)">Book →</button>
+        </div>
+      </div>
+    </div></div><div class="act"><div class="act-inner">
+      <div class="act-img"><img src="./domore_platform_files/photo-1464822759023-fed622ff2c3b" alt="Sunset group hike" loading="lazy"><div class="img-ov"></div><span class="disc-b">-35%</span><span class="cat-b">❧ nature</span></div>
+      <div class="act-body">
+        <div class="act-meta"><span class="city-t">📍 Fribourg · 22 km</span><span class="rating-t">★ 4.9</span></div>
+        <div class="act-title">Sunset group hike</div>
+        <div class="act-partner">by Swiss Trek Club</div>
+        <div class="act-dets"><span class="det">📅 6 Jun</span><span class="det">🕐 17:30</span></div>
+        <div class="act-footer">
+          <div><div class="pb"><span class="pn">CHF 18</span><span class="po">CHF 28</span></div><span class="sp-pill sp-ok">20 spots</span></div>
+          <button class="book-btn" onclick="openModal(11)">Book →</button>
+        </div>
+      </div>
+    </div></div><div class="act"><div class="act-inner">
+      <div class="act-img"><img src="./domore_platform_files/photo-1504280390367-361c6d9f38f4" alt="Via Ferrata discovery" loading="lazy"><div class="img-ov"></div><span class="disc-b">-40%</span><span class="cat-b">❧ nature</span></div>
+      <div class="act-body">
+        <div class="act-meta"><span class="city-t">📍 Interlaken · 65 km</span><span class="rating-t">★ 4.8</span></div>
+        <div class="act-title">Via Ferrata discovery</div>
+        <div class="act-partner">by Alpine Adventures</div>
+        <div class="act-dets"><span class="det">📅 21 Jun</span><span class="det">🕐 09:00</span></div>
+        <div class="act-footer">
+          <div><div class="pb"><span class="pn">CHF 45</span><span class="po">CHF 75</span></div><span class="sp-pill sp-warn">6 spots</span></div>
+          <button class="book-btn" onclick="openModal(12)">Book →</button>
+        </div>
+      </div>
+    </div></div><div class="act"><div class="act-inner">
+      <div class="act-img"><img src="./domore_platform_files/photo-1601024445121-e5b82f020549" alt="Paragliding tandem flight" loading="lazy"><div class="img-ov"></div><span class="disc-b">-30%</span><span class="cat-b">❧ nature</span></div>
+      <div class="act-body">
+        <div class="act-meta"><span class="city-t">📍 Interlaken · 68 km</span><span class="rating-t">★ 5</span></div>
+        <div class="act-title">Paragliding tandem flight</div>
+        <div class="act-partner">by Skywings Interlaken</div>
+        <div class="act-dets"><span class="det">📅 28 Jun</span><span class="det">🕐 11:00</span></div>
+        <div class="act-footer">
+          <div><div class="pb"><span class="pn">CHF 126</span><span class="po">CHF 180</span></div><span class="sp-pill sp-warn">5 spots</span></div>
+          <button class="book-btn" onclick="openModal(13)">Book →</button>
+        </div>
+      </div>
+    </div></div><div class="act"><div class="act-inner">
+      <div class="act-img"><img src="./domore_platform_files/photo-1544551763-46a013bb70d5" alt="SUP paddle — 2h initiation" loading="lazy"><div class="img-ov"></div><span class="disc-b">-40%</span><span class="cat-b">〜 water</span></div>
+      <div class="act-body">
+        <div class="act-meta"><span class="city-t">📍 Montreux · 35 km</span><span class="rating-t">★ 4.6</span></div>
+        <div class="act-title">SUP paddle — 2h initiation</div>
+        <div class="act-partner">by Blue Wave Center</div>
+        <div class="act-dets"><span class="det">📅 14 Jun</span><span class="det">🕐 14:00</span></div>
+        <div class="act-footer">
+          <div><div class="pb"><span class="pn">CHF 39</span><span class="po">CHF 65</span></div><span class="sp-pill sp-ok">10 spots</span></div>
+          <button class="book-btn" onclick="openModal(14)">Book →</button>
+        </div>
+      </div>
+    </div></div><div class="act"><div class="act-inner">
+      <div class="act-img"><img src="./domore_platform_files/photo-1578662996442-48f60103fc96" alt="Night kayak on Lac Léman" loading="lazy"><div class="img-ov"></div><span class="disc-b">-35%</span><span class="cat-b">〜 water</span></div>
+      <div class="act-body">
+        <div class="act-meta"><span class="city-t">📍 Lausanne · 5 km</span><span class="rating-t">★ 4.8</span></div>
+        <div class="act-title">Night kayak on Lac Léman</div>
+        <div class="act-partner">by Blue Wave Center</div>
+        <div class="act-dets"><span class="det">📅 20 Jun</span><span class="det">🕐 21:00</span></div>
+        <div class="act-footer">
+          <div><div class="pb"><span class="pn">CHF 46</span><span class="po">CHF 70</span></div><span class="sp-pill sp-ok">8 spots</span></div>
+          <button class="book-btn" onclick="openModal(15)">Book →</button>
+        </div>
+      </div>
+    </div></div><div class="act"><div class="act-inner">
+      <div class="act-img"><img src="./domore_platform_files/photo-1502680390469-be75c86b636f" alt="Yoga on paddleboard" loading="lazy"><div class="img-ov"></div><span class="disc-b">-30%</span><span class="cat-b">〜 water</span></div>
+      <div class="act-body">
+        <div class="act-meta"><span class="city-t">📍 Geneva · 8 km</span><span class="rating-t">★ 4.7</span></div>
+        <div class="act-title">Yoga on paddleboard</div>
+        <div class="act-partner">by AquaZen Geneva</div>
+        <div class="act-dets"><span class="det">📅 22 Jun</span><span class="det">🕐 09:00</span></div>
+        <div class="act-footer">
+          <div><div class="pb"><span class="pn">CHF 42</span><span class="po">CHF 60</span></div><span class="sp-pill sp-warn">6 spots</span></div>
+          <button class="book-btn" onclick="openModal(16)">Book →</button>
+        </div>
+      </div>
+    </div></div><div class="act"><div class="act-inner">
+      <div class="act-img"><img src="./domore_platform_files/photo-1530866495561-507c9faab2ed" alt="Whitewater rafting — Aare" loading="lazy"><div class="img-ov"></div><span class="disc-b">-40%</span><span class="cat-b">〜 water</span></div>
+      <div class="act-body">
+        <div class="act-meta"><span class="city-t">📍 Interlaken · 70 km</span><span class="rating-t">★ 4.9</span></div>
+        <div class="act-title">Whitewater rafting — Aare</div>
+        <div class="act-partner">by Alpin Raft</div>
+        <div class="act-dets"><span class="det">📅 27 Jun</span><span class="det">🕐 10:00</span></div>
+        <div class="act-footer">
+          <div><div class="pb"><span class="pn">CHF 57</span><span class="po">CHF 95</span></div><span class="sp-pill sp-ok">12 spots</span></div>
+          <button class="book-btn" onclick="openModal(17)">Book →</button>
+        </div>
+      </div>
+    </div></div><div class="act"><div class="act-inner">
+      <div class="act-img"><img src="./domore_platform_files/photo-1565193566173-7a0ee3dbe261" alt="Pottery workshop — 2h" loading="lazy"><div class="img-ov"></div><span class="disc-b">-30%</span><span class="cat-b">◎ casual</span></div>
+      <div class="act-body">
+        <div class="act-meta"><span class="city-t">📍 Bern · 14 km</span><span class="rating-t">★ 4.8</span></div>
+        <div class="act-title">Pottery workshop — 2h</div>
+        <div class="act-partner">by Clay &amp; Co Studio</div>
+        <div class="act-dets"><span class="det">📅 7 Jun</span><span class="det">🕐 14:00</span></div>
+        <div class="act-footer">
+          <div><div class="pb"><span class="pn">CHF 46</span><span class="po">CHF 65</span></div><span class="sp-pill sp-ok">10 spots</span></div>
+          <button class="book-btn" onclick="openModal(18)">Book →</button>
+        </div>
+      </div>
+    </div></div><div class="act"><div class="act-inner">
+      <div class="act-img"><img src="./domore_platform_files/photo-1556909114-f6e7ad7d3136" alt="Italian cooking class" loading="lazy"><div class="img-ov"></div><span class="disc-b">-40%</span><span class="cat-b">◎ casual</span></div>
+      <div class="act-body">
+        <div class="act-meta"><span class="city-t">📍 Lausanne · 4 km</span><span class="rating-t">★ 4.9</span></div>
+        <div class="act-title">Italian cooking class</div>
+        <div class="act-partner">by Cucina Viva Lausanne</div>
+        <div class="act-dets"><span class="det">📅 10 Jun</span><span class="det">🕐 18:30</span></div>
+        <div class="act-footer">
+          <div><div class="pb"><span class="pn">CHF 51</span><span class="po">CHF 85</span></div><span class="sp-pill sp-ok">8 spots</span></div>
+          <button class="book-btn" onclick="openModal(19)">Book →</button>
+        </div>
+      </div>
+    </div></div><div class="act"><div class="act-inner">
+      <div class="act-img"><img src="./domore_platform_files/premium_photo-1679321795564-f73ec1c21fcd" alt="Bowling night — 2 games" loading="lazy"><div class="img-ov"></div><span class="disc-b">-50%</span><span class="cat-b">◎ casual</span></div>
+      <div class="act-body">
+        <div class="act-meta"><span class="city-t">📍 Geneva · 5 km</span><span class="rating-t">★ 4.5</span></div>
+        <div class="act-title">Bowling night — 2 games</div>
+        <div class="act-partner">by Geneva Bowl</div>
+        <div class="act-dets"><span class="det">📅 13 Jun</span><span class="det">🕐 20:00</span></div>
+        <div class="act-footer">
+          <div><div class="pb"><span class="pn">CHF 18</span><span class="po">CHF 35</span></div><span class="sp-pill sp-ok">Open spots</span></div>
+          <button class="book-btn" onclick="openModal(20)">Book →</button>
+        </div>
+      </div>
+    </div></div><div class="act"><div class="act-inner">
+      <div class="act-img"><img src="./domore_platform_files/photo-1511882150382-421056c89033" alt="Laser game — 2 rounds" loading="lazy"><div class="img-ov"></div><span class="disc-b">-25%</span><span class="cat-b">◎ casual</span></div>
+      <div class="act-body">
+        <div class="act-meta"><span class="city-t">📍 Zurich · 16 km</span><span class="rating-t">★ 4.6</span></div>
+        <div class="act-title">Laser game — 2 rounds</div>
+        <div class="act-partner">by LaserZone Zurich</div>
+        <div class="act-dets"><span class="det">📅 17 Jun</span><span class="det">🕐 19:30</span></div>
+        <div class="act-footer">
+          <div><div class="pb"><span class="pn">CHF 21</span><span class="po">CHF 28</span></div><span class="sp-pill sp-ok">20 spots</span></div>
+          <button class="book-btn" onclick="openModal(21)">Book →</button>
+        </div>
+      </div>
+    </div></div><div class="act"><div class="act-inner">
+      <div class="act-img"><img src="./domore_platform_files/photo-1551698618-1dfe5d97d256" alt="Ski day — Verbier 4 Vallées" loading="lazy"><div class="img-ov"></div><span class="disc-b">-40%</span><span class="cat-b">❄ winter</span></div>
+      <div class="act-body">
+        <div class="act-meta"><span class="city-t">📍 Verbier · 100 km</span><span class="rating-t">★ 4.9</span></div>
+        <div class="act-title">Ski day — Verbier 4 Vallées</div>
+        <div class="act-partner">by Verbier Ski Pass</div>
+        <div class="act-dets"><span class="det">📅 20 Dec</span><span class="det">🕐 08:00</span></div>
+        <div class="act-footer">
+          <div><div class="pb"><span class="pn">CHF 105</span><span class="po">CHF 175</span></div><span class="sp-pill sp-ok">15 spots</span></div>
+          <button class="book-btn" onclick="openModal(22)">Book →</button>
+        </div>
+      </div>
+    </div></div><div class="act"><div class="act-inner">
+      <div class="act-img"><img src="./domore_platform_files/photo-1491555103944-7c647fd857e6" alt="Snowboard lesson — beginner" loading="lazy"><div class="img-ov"></div><span class="disc-b">-35%</span><span class="cat-b">❄ winter</span></div>
+      <div class="act-body">
+        <div class="act-meta"><span class="city-t">📍 Sion · 80 km</span><span class="rating-t">★ 4.8</span></div>
+        <div class="act-title">Snowboard lesson — beginner</div>
+        <div class="act-partner">by Ride Academy Valais</div>
+        <div class="act-dets"><span class="det">📅 27 Dec</span><span class="det">🕐 09:30</span></div>
+        <div class="act-footer">
+          <div><div class="pb"><span class="pn">CHF 85</span><span class="po">CHF 130</span></div><span class="sp-pill sp-warn">6 spots</span></div>
+          <button class="book-btn" onclick="openModal(23)">Book →</button>
+        </div>
+      </div>
+    </div></div><div class="act"><div class="act-inner">
+      <div class="act-img"><img src="./domore_platform_files/photo-1502680390469-be75c86b636f" alt="Indoor surfing — Alaïa Bay" loading="lazy"><div class="img-ov"></div><span class="disc-b">-50%</span><span class="cat-b">❄ winter</span></div>
+      <div class="act-body">
+        <div class="act-meta"><span class="city-t">📍 Sion · 75 km</span><span class="rating-t">★ 4.9</span></div>
+        <div class="act-title">Indoor surfing — Alaïa Bay</div>
+        <div class="act-partner">by Alaïa Bay</div>
+        <div class="act-dets"><span class="det">📅 15 Dec</span><span class="det">🕐 10:00</span></div>
+        <div class="act-footer">
+          <div><div class="pb"><span class="pn">CHF 80</span><span class="po">CHF 160</span></div><span class="sp-pill sp-ok">8 spots</span></div>
+          <button class="book-btn" onclick="openModal(24)">Book →</button>
+        </div>
+      </div>
+    </div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PARTNER -->
+<div id="tab-partner" class="main" style="display:none">
+  <div class="portal">
+    <div class="portal-side">
+      <div class="p-profile">
+        <div class="p-avatar" id="partnerAvatar">🏢</div>
+        <div class="p-name" id="partnerNameDisp">My Partner Space</div>
+        <div class="p-city" id="partnerCityDisp">Set up your profile →</div>
+        <div class="p-stats-mini">
+          <div class="pm-stat"><div class="v" id="pStatOffers">0</div><div class="l">Live offers</div></div>
+          <div class="pm-stat"><div class="v" id="pStatBooked">0</div><div class="l">Bookings</div></div>
+          <div class="pm-stat"><div class="v" id="pStatRevenue">CHF 0</div><div class="l">Est. revenue</div></div>
+          <div class="pm-stat"><div class="v" id="pStatRating">—</div><div class="l">Avg rating</div></div>
+        </div>
+      </div>
+      <div class="form-card">
+        <div class="fc-title">Partner profile</div>
+        <div class="fc-sub">Shown to students on every offer.</div>
+        <div class="df"><label>Partner name</label><input type="text" id="pName" placeholder="e.g. Alpine Wellness Club" oninput="updatePartnerProfile()"></div>
+        <div class="df-row">
+          <div class="df"><label>City</label><input type="text" id="pCity" placeholder="Lausanne" oninput="updatePartnerProfile()"></div>
+          <div class="df"><label>Main category</label>
+            <select id="pCat" onchange="updatePartnerProfile()">
+              <option value="wellness">♡ Wellness</option><option value="sport">⊕ Sport</option><option value="nature">❧ Nature</option><option value="water">〜 Water</option><option value="casual">◎ Casual</option><option value="winter">❄ Winter</option>
+            </select>
+          </div>
+        </div>
+        <div class="df"><label>Bio</label><textarea id="pDesc" placeholder="Describe your activity, vibe and audience…"></textarea></div>
+      </div>
+    </div>
+    <div class="portal-main">
+      <div class="form-card">
+        <div class="fc-title">Post an offer</div>
+        <div class="fc-sub">Fill in all required fields to go live.</div>
+        <div class="criteria">
+          <div class="crit-title">✦ Publication requirements</div>
+          <div class="crit-item"><div class="crit-dot" id="c1"></div><span id="c1t">Title required</span></div>
+          <div class="crit-item"><div class="crit-dot" id="c2"></div><span id="c2t">Discount between 20% and 51%</span></div>
+          <div class="crit-item"><div class="crit-dot" id="c3"></div><span id="c3t">Original price entered</span></div>
+          <div class="crit-item"><div class="crit-dot" id="c4"></div><span id="c4t">Future date selected</span></div>
+          <div class="crit-item"><div class="crit-dot" id="c5"></div><span id="c5t">City entered</span></div>
+          <div class="crit-item"><div class="crit-dot" id="c6"></div><span id="c6t">Description (min. 20 characters)</span></div>
+        </div>
+        <div class="df"><label>Offer title *</label><input type="text" id="oTitle" placeholder="e.g. Sunrise yoga on the lake" oninput="checkCriteria()"></div>
+        <div class="df-row">
+          <div class="df"><label>Category *</label>
+            <select id="oCat"><option value="wellness">♡ Wellness</option><option value="sport">⊕ Sport</option><option value="nature">❧ Nature</option><option value="water">〜 Water</option><option value="casual">◎ Casual</option><option value="winter">❄ Winter</option></select>
+          </div>
+          <div class="df"><label>City *</label><input type="text" id="oCity" placeholder="e.g. Lausanne" oninput="checkCriteria()"></div>
+        </div>
+        <div class="df-row3">
+          <div class="df"><label>Original price CHF *</label><input type="number" id="oPrice" placeholder="80" min="1" oninput="checkCriteria();calcDisc()"></div>
+          <div class="df"><label>Discount % * (20–51)</label><input type="number" id="oDisc" placeholder="30" min="20" max="51" oninput="checkCriteria();calcDisc()"></div>
+          <div class="df"><label>Student price</label><input type="text" id="oDiscPrice" placeholder="— CHF" readonly="" style="color:var(--blue);font-weight:700"></div>
+        </div>
+        <div class="df-row">
+          <div class="df"><label>Date *</label><input type="date" id="oDate" oninput="checkCriteria()"></div>
+          <div class="df"><label>Time</label><input type="time" id="oTime" value="10:00"></div>
+        </div>
+        <div class="df-row">
+          <div class="df"><label>Spots (0 = unlimited)</label><input type="number" id="oSlots" placeholder="12" min="0"></div>
+          <div class="df"><label>Distance from center (km)</label><input type="number" id="oKm" placeholder="5" min="1"></div>
+        </div>
+        <div class="df"><label>Image URL (optional)</label><input type="text" id="oImg" placeholder="https://images.unsplash.com/…"></div>
+        <div class="df"><label>Description *</label><textarea id="oDesc" placeholder="What&#39;s included? Level required? What to bring?" oninput="checkCriteria()"></textarea></div>
+        <div class="form-btns">
+          <button class="btn-blue" id="publishBtn" onclick="publishOffer()" disabled="" style="opacity:.4">Publish offer</button>
+          <button class="btn-ghost-sm" onclick="clearForm()">Reset</button>
+        </div>
+      </div>
+      <div class="offers-list">
+        <div class="ol-hdr"><div class="ol-title">My published offers</div><span style="font-size:11px;color:#a0b4d0" id="myOffersCount">0 offers</span></div>
+        <div id="myOffersList"><div style="padding:24px;text-align:center;color:#a0b4d0;font-size:13px">Post your first offer above.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MEMBERSHIP -->
+<div id="tab-membership" class="main" style="display:none">
+  <div style="background:linear-gradient(135deg,rgba(52,211,153,0.1),rgba(56,189,248,0.1));border:1px solid var(--green-border);border-radius:20px;padding:32px;margin-bottom:20px;">
+    <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(52,211,153,0.15);border:1px solid var(--green-border);border-radius:999px;padding:4px 12px;font-size:11px;color:var(--green);font-weight:700;margin-bottom:14px">🧪 Beta phase</div>
+    <h2 style="font-family:&#39;DM Serif Display&#39;,Georgia,serif;font-size:28px;margin-bottom:8px;color:#fff">DoMore Student Membership</h2>
+    <p style="font-size:14px;color:#c0cfe8;line-height:1.65">Access exclusive discounts up to -50% across Switzerland. 20 verified partners, one discounted trial per activity.</p>
+    <div style="font-size:52px;font-weight:700;color:var(--green);margin:16px 0 4px">FREE <span style="font-size:18px;font-weight:400;color:#a0b4d0">during beta</span></div>
+    <p style="font-size:13px;color:#a0b4d0;margin-bottom:16px">Sign up with your student email — no credit card needed. Pricing may apply after the beta phase.</p>
+    <button class="btn-blue">Sign up for free</button>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px;">
+    <div style="background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:16px;padding:18px;"><div style="font-size:20px;margin-bottom:8px">🏷</div><div style="font-size:30px;font-weight:700;color:var(--blue);margin-bottom:4px">-50%</div><div style="font-size:13px;color:#c0cfe8">Maximum discount across all partner offers.</div></div>
+    <div style="background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:16px;padding:18px;"><div style="font-size:20px;margin-bottom:8px">🤝</div><div style="font-size:30px;font-weight:700;color:var(--blue);margin-bottom:4px">20</div><div style="font-size:13px;color:#c0cfe8">Verified partners across Switzerland.</div></div>
+    <div style="background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:16px;padding:18px;"><div style="font-size:20px;margin-bottom:8px">🧪</div><div style="font-size:30px;font-weight:700;color:var(--green);margin-bottom:4px">BETA</div><div style="font-size:13px;color:#c0cfe8">Join early and help shape the product.</div></div>
+  </div>
+  <div style="background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:18px;overflow:hidden;">
+    <div style="padding:14px 20px;border-bottom:1px solid var(--border);font-size:15px;font-weight:700;color:#fff">What's included</div>
+    <div style="padding:14px 20px;border-bottom:1px solid rgba(255,255,255,0.04);display:flex;gap:14px;align-items:flex-start"><div style="width:34px;height:34px;background:var(--green-bg);border:1px solid var(--green-border);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0">✓</div><div><div style="font-size:14px;font-weight:600;color:#fff">Instant access after sign-up</div><div style="font-size:12px;color:#a0b4d0;margin-top:2px">Your account is activated immediately. No waiting, no manual validation.</div></div></div>
+    <div style="padding:14px 20px;border-bottom:1px solid rgba(255,255,255,0.04);display:flex;gap:14px;align-items:flex-start"><div style="width:34px;height:34px;background:var(--green-bg);border:1px solid var(--green-border);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0">📍</div><div><div style="font-size:14px;font-weight:600;color:#fff">Smart location filtering</div><div style="font-size:12px;color:#a0b4d0;margin-top:2px">Find activities near your campus with city and distance filters.</div></div></div>
+    <div style="padding:14px 20px;border-bottom:1px solid rgba(255,255,255,0.04);display:flex;gap:14px;align-items:flex-start"><div style="width:34px;height:34px;background:var(--green-bg);border:1px solid var(--green-border);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0">🤝</div><div><div style="font-size:14px;font-weight:600;color:#fff">Verified local partners</div><div style="font-size:12px;color:#a0b4d0;margin-top:2px">All partners are vetted and rated by the student community.</div></div></div>
+    <div style="padding:14px 20px;display:flex;gap:14px;align-items:flex-start"><div style="width:34px;height:34px;background:var(--green-bg);border:1px solid var(--green-border);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0">🔄</div><div><div style="font-size:14px;font-weight:600;color:#fff">New offers every week</div><div style="font-size:12px;color:#a0b4d0;margin-top:2px">Partners publish new slots regularly. Explore, discover, come back.</div></div></div>
+  </div>
+</div>
+
+<!-- BOOKING MODAL -->
+<div class="modal-bg" id="bookingModal" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <div id="modalStep1">
+      <div class="m-hdr">
+        <div><div style="font-size:11px;color:#a0b4d0;margin-bottom:3px">Book this offer</div><div class="m-title" id="mTitle"></div><div class="m-sub" id="mPartner"></div></div>
+        <button class="m-close" onclick="closeModal()">✕</button>
+      </div>
+      <div class="m-info">
+        <div class="m-info-row"><span id="mCity"></span><span id="mDate"></span></div>
+        <div style="display:flex;align-items:baseline;gap:6px;margin-top:8px">
+          <span class="m-price-now" id="mPriceNow"></span>
+          <span class="m-price-orig" id="mPriceOrig"></span>
+          <span class="m-disc" id="mDisc"></span>
+        </div>
+        <div style="margin-top:8px;font-size:11px;color:var(--green)">✓ Free DoMore student membership applied</div>
+      </div>
+      <div class="m-fields">
+        <input class="m-input" type="text" id="mName" placeholder="First and last name">
+        <input class="m-input" type="email" id="mEmail" placeholder="Student email (.edu or .ch)">
+      </div>
+      <button class="m-confirm" onclick="confirmBooking()">Confirm booking</button>
+    </div>
+    <div id="modalStep2" style="display:none">
+      <div class="m-success">
+        <div class="big-e">🎉</div>
+        <div class="m-ok-title">Booking confirmed!</div>
+        <div class="m-ok-sub" id="mSuccessMsg"></div>
+        <div class="m-ok-box" id="mSavings"></div>
+        <button class="m-confirm" style="margin-top:16px" onclick="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const catEmoji={wellness:"♡",sport:"⊕",nature:"❧",water:"〜",casual:"◎",winter:"❄"};
+const defaultImgs={wellness:"https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&q=70",sport:"https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&q=70",nature:"https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&q=70",water:"https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=70",casual:"https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=400&q=70",winter:"https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&q=70"};
+
+let offers=[
+  // WELLNESS (5)
+  {id:1,title:"Lakeside yoga — sunrise session",cat:"wellness",city:"Lausanne",km:4,price:35,disc:40,partner:"ZenFlow Studio",slots:12,rating:4.8,date:"2025-06-05",time:"07:30",img:"https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&q=70",desc:"Gentle outdoor yoga at sunrise facing Lac Léman. Mat provided. All levels welcome.",mine:false,bookings:5,status:"active"},
+  {id:2,title:"Deep tissue massage — 60 min",cat:"wellness",city:"Geneva",km:3,price:120,disc:40,partner:"Body Reset Geneva",slots:4,rating:4.9,date:"2025-06-08",time:"11:00",img:"https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=400&q=70",desc:"60-min targeted deep tissue massage. Ideal for recovery after sport. Towels provided.",mine:false,bookings:3,status:"active"},
+  {id:3,title:"Hot yoga — 90 min flow",cat:"wellness",city:"Zurich",km:5,price:45,disc:30,partner:"Heat & Heal Zurich",slots:16,rating:4.7,date:"2025-06-10",time:"18:30",img:"https://images.unsplash.com/photo-1588286840104-8957b019727f?w=400&q=70",desc:"Challenging 90-min hot yoga session in a heated room. Bring water and a towel.",mine:false,bookings:7,status:"active"},
+  {id:4,title:"Floatation tank — 1h session",cat:"wellness",city:"Lausanne",km:6,price:95,disc:35,partner:"Float Lab Lausanne",slots:3,rating:4.8,date:"2025-06-12",time:"14:00",img:"https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=70",desc:"1-hour sensory deprivation float. Perfect for stress relief and deep relaxation.",mine:false,bookings:2,status:"active"},
+  {id:5,title:"Guided meditation & breathwork",cat:"wellness",city:"Bern",km:8,price:40,disc:25,partner:"Mindful Bern",slots:20,rating:4.6,date:"2025-06-14",time:"10:00",img:"https://images.unsplash.com/photo-1545389336-cf090694435e?w=400&q=70",desc:"90-min workshop combining breathwork and guided meditation. Cushions provided.",mine:false,bookings:4,status:"active"},
+  // SPORT (5)
+  {id:6,title:"Indoor climbing — beginner",cat:"sport",city:"Geneva",km:11,price:48,disc:40,partner:"Vertical Hub Geneva",slots:8,rating:4.7,date:"2025-06-07",time:"19:00",img:"https://images.unsplash.com/photo-1516592673884-4a382d1124c2?w=400&q=70",desc:"Discover indoor climbing with a certified instructor. Harness and shoes included.",mine:false,bookings:4,status:"active"},
+  {id:7,title:"Padel — 1h court + coach",cat:"sport",city:"Lausanne",km:7,price:55,disc:30,partner:"SwissPadel Lausanne",slots:4,rating:4.6,date:"2025-06-09",time:"18:00",img:"https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=400&q=70",desc:"1-hour padel session with a certified coach. Rackets provided. Beginner friendly.",mine:false,bookings:2,status:"active"},
+  {id:8,title:"Boxing class — foundation",cat:"sport",city:"Zurich",km:4,price:42,disc:35,partner:"Swiss Boxing Academy",slots:10,rating:4.8,date:"2025-06-11",time:"07:00",img:"https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=400&q=70",desc:"Learn the basics of boxing: stance, jab, cross, hook. Gloves provided.",mine:false,bookings:6,status:"active"},
+  {id:9,title:"CrossFit — drop-in class",cat:"sport",city:"Basel",km:6,price:38,disc:25,partner:"CrossFit Basel",slots:15,rating:4.5,date:"2025-06-13",time:"12:00",img:"https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&q=70",desc:"High-intensity functional fitness class. Scaled for all fitness levels.",mine:false,bookings:9,status:"active"},
+  {id:10,title:"Tennis — 1h private lesson",cat:"sport",city:"Geneva",km:9,price:90,disc:40,partner:"Tennis Club Champel",slots:2,rating:4.9,date:"2025-06-15",time:"16:00",img:"https://images.unsplash.com/photo-1620862301989-8bf85fd02ed4?w=400&q=70",desc:"Private one-hour tennis lesson with a certified coach. Rackets available on request.",mine:false,bookings:1,status:"active"},
+  // NATURE (3)
+  {id:11,title:"Sunset group hike",cat:"nature",city:"Fribourg",km:22,price:28,disc:35,partner:"Swiss Trek Club",slots:20,rating:4.9,date:"2025-06-06",time:"17:30",img:"https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&q=70",desc:"Group hike to the summit for panoramic views of the Pre-Alps. Guide included.",mine:false,bookings:11,status:"active"},
+  {id:12,title:"Via Ferrata discovery",cat:"nature",city:"Interlaken",km:65,price:75,disc:40,partner:"Alpine Adventures",slots:6,rating:4.8,date:"2025-06-21",time:"09:00",img:"https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=400&q=70",desc:"Guided via ferrata for beginners in the Bernese Oberland. Harness and helmet included.",mine:false,bookings:3,status:"active"},
+  {id:13,title:"Paragliding tandem flight",cat:"nature",city:"Interlaken",km:68,price:180,disc:30,partner:"Skywings Interlaken",slots:5,rating:5.0,date:"2025-06-28",time:"11:00",img:"https://images.unsplash.com/photo-1601024445121-e5b82f020549?w=400&q=70",desc:"20-min tandem paragliding flight over Interlaken with a certified pilot. GoPro footage included.",mine:false,bookings:4,status:"active"},
+  // WATER (4)
+  {id:14,title:"SUP paddle — 2h initiation",cat:"water",city:"Montreux",km:35,price:65,disc:40,partner:"Blue Wave Center",slots:10,rating:4.6,date:"2025-06-14",time:"14:00",img:"https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=70",desc:"Stand-up paddle on Lac Léman. Wetsuit, paddle and board included.",mine:false,bookings:5,status:"active"},
+  {id:15,title:"Night kayak on Lac Léman",cat:"water",city:"Lausanne",km:5,price:70,disc:35,partner:"Blue Wave Center",slots:8,rating:4.8,date:"2025-06-20",time:"21:00",img:"https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&q=70",desc:"Kayak under the stars with LED life jackets and a guide. Truly unforgettable.",mine:false,bookings:3,status:"active"},
+  {id:16,title:"Yoga on paddleboard",cat:"water",city:"Geneva",km:8,price:60,disc:30,partner:"AquaZen Geneva",slots:6,rating:4.7,date:"2025-06-22",time:"09:00",img:"https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=400&q=70",desc:"Balance yoga and SUP for a unique challenge on the lake. All levels welcome.",mine:false,bookings:2,status:"active"},
+  {id:17,title:"Whitewater rafting — Aare",cat:"water",city:"Interlaken",km:70,price:95,disc:40,partner:"Alpin Raft",slots:12,rating:4.9,date:"2025-06-27",time:"10:00",img:"https://images.unsplash.com/photo-1530866495561-507c9faab2ed?w=400&q=70",desc:"2-hour group rafting on the Aare river. Guide, wetsuit and helmet included.",mine:false,bookings:8,status:"active"},
+  // CASUAL (4)
+  {id:18,title:"Pottery workshop — 2h",cat:"casual",city:"Bern",km:14,price:65,disc:30,partner:"Clay & Co Studio",slots:10,rating:4.8,date:"2025-06-07",time:"14:00",img:"https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=400&q=70",desc:"2-hour beginner pottery class. Create a bowl or vase to take home. Apron included.",mine:false,bookings:6,status:"active"},
+  {id:19,title:"Italian cooking class",cat:"casual",city:"Lausanne",km:4,price:85,disc:40,partner:"Cucina Viva Lausanne",slots:8,rating:4.9,date:"2025-06-10",time:"18:30",img:"https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=70",desc:"Make fresh pasta & tiramisu with a professional chef. Dinner and wine included.",mine:false,bookings:7,status:"active"},
+  {id:20,title:"Bowling night — 2 games",cat:"casual",city:"Geneva",km:5,price:35,disc:50,partner:"Geneva Bowl",slots:0,rating:4.5,date:"2025-06-13",time:"20:00",img:"https://plus.unsplash.com/premium_photo-1679321795564-f73ec1c21fcd?w=400&q=70",desc:"2 hours of bowling for up to 6 players per lane. Shoe rental included.",mine:false,bookings:9,status:"active"},
+  {id:21,title:"Laser game — 2 rounds",cat:"casual",city:"Zurich",km:16,price:28,disc:25,partner:"LaserZone Zurich",slots:20,rating:4.6,date:"2025-06-17",time:"19:30",img:"https://images.unsplash.com/photo-1511882150382-421056c89033?w=400&q=70",desc:"Two full laser game rounds in a themed arena. Equipment and vest included.",mine:false,bookings:10,status:"active"},
+  // WINTER (3)
+  {id:22,title:"Ski day — Verbier 4 Vallées",cat:"winter",city:"Verbier",km:100,price:175,disc:40,partner:"Verbier Ski Pass",slots:15,rating:4.9,date:"2025-12-20",time:"08:00",img:"https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&q=70",desc:"Full-day lift pass for Verbier's legendary 4 Vallées resort. Pick-up option available.",mine:false,bookings:6,status:"active"},
+  {id:23,title:"Snowboard lesson — beginner",cat:"winter",city:"Sion",km:80,price:130,disc:35,partner:"Ride Academy Valais",slots:6,rating:4.8,date:"2025-12-27",time:"09:30",img:"https://images.unsplash.com/photo-1491555103944-7c647fd857e6?w=400&q=70",desc:"3-hour beginner snowboard group lesson with a certified instructor. Board and boots included.",mine:false,bookings:3,status:"active"},
+  {id:24,title:"Indoor surfing — Alaïa Bay",cat:"winter",city:"Sion",km:75,price:160,disc:50,partner:"Alaïa Bay",slots:8,rating:4.9,date:"2025-12-15",time:"10:00",img:"https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=400&q=70",desc:"60-min session on the world's first wave pool in Switzerland. Instructor included.",mine:false,bookings:5,status:"active"},
+];
+
+let nextId=300,currentCat="all",currentActivity=null;
+
+function setCategory(cat){
+  currentCat=cat;
+  document.querySelectorAll('.cat').forEach(b=>b.classList.toggle('active',b.dataset.cat===cat));
+  renderActivities();
+}
+
+function renderActivities(){
+  const city=document.getElementById('cityFilter').value;
+  const dist=parseInt(document.getElementById('distFilter').value);
+  const maxP=parseInt(document.getElementById('priceFilter').value);
+  const minD=parseInt(document.getElementById('discFilter').value)||0;
+  const q=document.getElementById('searchFilter').value.toLowerCase();
+  const f=offers.filter(o=>o.status==='active').filter(a=>{
+    if(currentCat!=='all'&&a.cat!==currentCat)return false;
+    if(a.km&&a.km>dist)return false;
+    if(a.price>maxP)return false;
+    if(city!=='all'&&a.city!==city)return false;
+    if(a.disc<minD)return false;
+    if(q&&![a.title,a.partner,a.city].some(s=>s.toLowerCase().includes(q)))return false;
+    return true;
+  });
+  document.getElementById('resultsCount').textContent=f.length+' offer'+(f.length!==1?'s':'');
+  const c=document.getElementById('activityResults');
+  if(!f.length){c.innerHTML='<div class="empty">No offers match your filters.<br>Try adjusting the category, city or price.</div>';return;}
+  c.innerHTML=f.map(a=>{
+    const dp=Math.round(a.price*(1-a.disc/100));
+    const sc=a.slots===0?'sp-ok':a.slots<=3?'sp-crit':a.slots<=7?'sp-warn':'sp-ok';
+    const sl=a.slots===0?'Open spots':a.slots+' spot'+(a.slots!==1?'s':'');
+    const ds=a.date?new Date(a.date).toLocaleDateString('en-GB',{day:'numeric',month:'short'}):'';
+    return`<div class="act"><div class="act-inner">
+      <div class="act-img"><img src="${a.img||defaultImgs[a.cat]}" alt="${a.title}" loading="lazy"><div class="img-ov"></div><span class="disc-b">-${a.disc}%</span><span class="cat-b">${catEmoji[a.cat]} ${a.cat}</span></div>
+      <div class="act-body">
+        <div class="act-meta"><span class="city-t">📍 ${a.city}${a.km?' · '+a.km+' km':''}</span><span class="rating-t">${a.rating?'★ '+a.rating:''}</span></div>
+        <div class="act-title">${a.title}</div>
+        <div class="act-partner">by ${a.partner}</div>
+        <div class="act-dets">${ds?`<span class="det">📅 ${ds}</span>`:''}<span class="det">🕐 ${a.time}</span></div>
+        <div class="act-footer">
+          <div><div class="pb"><span class="pn">CHF ${dp}</span><span class="po">CHF ${a.price}</span></div><span class="sp-pill ${sc}">${sl}</span></div>
+          <button class="book-btn" onclick="openModal(${a.id})">Book →</button>
+        </div>
+      </div>
+    </div></div>`;
+  }).join('');
+  updateStats();
+}
+
+function updateStats(){
+  const active=offers.filter(o=>o.status==='active');
+  document.getElementById('statTotal').textContent=active.length;
+  document.getElementById('heroCount').textContent=active.length;
+  const partners=20+offers.filter(o=>o.mine&&o.status==='active').length;
+  document.getElementById('statPartners').textContent=partners;
+  const ws=active.filter(o=>o.slots>0);
+  document.getElementById('statSlots').textContent=ws.length?ws.reduce((s,o)=>s+o.slots,0):'—';
+  const mine=offers.filter(o=>o.mine);
+  document.getElementById('pStatOffers').textContent=mine.filter(o=>o.status==='active').length;
+  document.getElementById('pStatBooked').textContent=mine.reduce((s,o)=>s+o.bookings,0);
+  document.getElementById('pStatRevenue').textContent='CHF '+mine.reduce((s,o)=>s+(Math.round(o.price*(1-o.disc/100))*o.bookings),0);
+  document.getElementById('pStatRating').textContent=mine.length?'4.8':'—';
+  document.getElementById('myOffersCount').textContent=mine.length+' offer'+(mine.length!==1?'s':'');
+}
+
+function updatePartnerProfile(){
+  const n=document.getElementById('pName').value||'My Partner Space';
+  const city=document.getElementById('pCity').value||'';
+  const cat=document.getElementById('pCat').value;
+  document.getElementById('partnerNameDisp').textContent=n;
+  document.getElementById('partnerCityDisp').textContent=city||'Set up your profile →';
+  document.getElementById('partnerAvatar').textContent=catEmoji[cat]||'🏢';
+}
+
+function checkCriteria(){
+  const title=document.getElementById('oTitle').value.trim();
+  const disc=parseInt(document.getElementById('oDisc').value)||0;
+  const price=parseFloat(document.getElementById('oPrice').value)||0;
+  const date=document.getElementById('oDate').value;
+  const city=document.getElementById('oCity').value.trim();
+  const desc=document.getElementById('oDesc').value.trim();
+  const checks=[
+    [title.length>0,'Title required'],
+    [disc>=20&&disc<=51,'Discount between 20% and 51% (current: '+disc+'%)'],
+    [price>0,'Original price entered (CHF '+price+')'],
+    [date&&new Date(date)>new Date(),'Future date selected'],
+    [city.length>0,'City entered'],
+    [desc.length>=20,'Description min. 20 characters ('+desc.length+')'],
+  ];
+  let ok=true;
+  checks.forEach(([pass,lbl],i)=>{
+    document.getElementById('c'+(i+1)).className='crit-dot '+(pass?'ok':'bad');
+    document.getElementById('c'+(i+1)+'t').textContent=lbl;
+    document.getElementById('c'+(i+1)+'t').style.color=pass?'var(--green)':'var(--red)';
+    if(!pass)ok=false;
+  });
+  const btn=document.getElementById('publishBtn');btn.disabled=!ok;btn.style.opacity=ok?'1':'0.4';
+}
+
+function calcDisc(){
+  const p=parseFloat(document.getElementById('oPrice').value)||0;
+  const d=parseFloat(document.getElementById('oDisc').value)||0;
+  document.getElementById('oDiscPrice').value=p>0&&d>0?'CHF '+Math.round(p*(1-d/100)):'—';
+}
+
+function publishOffer(){
+  const cat=document.getElementById('oCat').value;
+  const img=document.getElementById('oImg').value.trim();
+  const sv=document.getElementById('oSlots').value;
+  const o={id:nextId++,title:document.getElementById('oTitle').value.trim(),cat,city:document.getElementById('oCity').value.trim(),km:parseInt(document.getElementById('oKm').value)||null,price:parseFloat(document.getElementById('oPrice').value),disc:parseInt(document.getElementById('oDisc').value),partner:document.getElementById('pName').value.trim()||'My partner',slots:sv?parseInt(sv):0,rating:null,date:document.getElementById('oDate').value,time:document.getElementById('oTime').value||'10:00',img:img||defaultImgs[cat],desc:document.getElementById('oDesc').value.trim(),status:'active',mine:true,bookings:0};
+  offers.unshift(o);renderActivities();renderMyOffers();updateStats();clearForm();
+  showToast('✓ Offer published! Now visible to all students.');
+}
+
+function clearForm(){
+  ['oTitle','oCity','oPrice','oDisc','oDiscPrice','oDate','oSlots','oKm','oImg','oDesc'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
+  document.getElementById('oTime').value='10:00';
+  for(let i=1;i<=6;i++){document.getElementById('c'+i).className='crit-dot';document.getElementById('c'+i+'t').style.color='';}
+  const btn=document.getElementById('publishBtn');btn.disabled=true;btn.style.opacity='0.4';
+}
+
+function renderMyOffers(){
+  const mine=offers.filter(o=>o.mine);
+  const c=document.getElementById('myOffersList');
+  if(!mine.length){c.innerHTML='<div style="padding:24px;text-align:center;color:#a0b4d0;font-size:13px">Post your first offer above.</div>';return;}
+  c.innerHTML=mine.map(o=>{
+    const dp=Math.round(o.price*(1-o.disc/100));
+    const ds=o.date?new Date(o.date).toLocaleDateString('en-GB',{day:'numeric',month:'short'}):'';
+    return`<div class="offer-row">
+      <div class="or-ico">${catEmoji[o.cat]}</div>
+      <div class="or-info"><div class="t">${o.title}</div><div class="s">${o.city} · ${ds} ${o.time} · ${o.slots===0?'Unlimited':o.slots+' spots'}</div></div>
+      <div class="or-stats"><div class="p">CHF ${dp}</div><div class="b">${o.bookings} bookings</div></div>
+      <span class="st ${o.status==='active'?'st-on':'st-off'}">${o.status==='active'?'Live':'Draft'}</span>
+      <div class="or-btns">
+        <button class="mb" onclick="toggleStatus(${o.id})">${o.status==='active'?'Pause':'Activate'}</button>
+        <button class="mb r" onclick="deleteOffer(${o.id})">Delete</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function toggleStatus(id){const o=offers.find(o=>o.id===id);if(!o)return;o.status=o.status==='active'?'draft':'active';renderMyOffers();renderActivities();updateStats();showToast(o.status==='active'?'✓ Offer reactivated.':'Offer paused.');}
+function deleteOffer(id){offers=offers.filter(o=>o.id!==id);renderMyOffers();renderActivities();updateStats();showToast('Offer deleted.');}
+
+function switchTab(tab){
+  ['discover','partner','membership'].forEach(t=>document.getElementById('tab-'+t).style.display=t===tab?'block':'none');
+  document.querySelectorAll('.ntab').forEach((b,i)=>b.classList.toggle('active',['discover','partner','membership'][i]===tab));
+}
+
+function toggleRole(){
+  const badge=document.getElementById('roleBadge');
+  const av=document.getElementById('userAv');
+  const name=document.getElementById('userName');
+  if(badge.classList.contains('role-student')){
+    badge.classList.replace('role-student','role-partner');
+    av.style.background='var(--blue-bg)';av.style.borderColor='var(--blue-border)';av.style.color='var(--blue)';
+    av.textContent='P';name.textContent='Partner';switchTab('partner');
+  } else {
+    badge.classList.replace('role-partner','role-student');
+    av.style.background='var(--green-bg)';av.style.borderColor='var(--green-border)';av.style.color='var(--green)';
+    av.textContent='S';name.textContent='Student';switchTab('discover');
+  }
+}
+
+function openModal(id){
+  currentActivity=offers.find(a=>a.id===id);if(!currentActivity)return;
+  const dp=Math.round(currentActivity.price*(1-currentActivity.disc/100));
+  const ds=currentActivity.date?new Date(currentActivity.date).toLocaleDateString('en-GB',{day:'numeric',month:'long'}):'';
+  document.getElementById('mTitle').textContent=currentActivity.title;
+  document.getElementById('mPartner').textContent='by '+currentActivity.partner;
+  document.getElementById('mCity').textContent='📍 '+currentActivity.city;
+  document.getElementById('mDate').textContent='📅 '+ds+' · '+currentActivity.time;
+  document.getElementById('mPriceNow').textContent='CHF '+dp;
+  document.getElementById('mPriceOrig').textContent='CHF '+currentActivity.price;
+  document.getElementById('mDisc').textContent='-'+currentActivity.disc+'%';
+  document.getElementById('mName').value='';document.getElementById('mEmail').value='';
+  document.getElementById('modalStep1').style.display='block';document.getElementById('modalStep2').style.display='none';
+  document.getElementById('bookingModal').classList.add('open');
+}
+
+function confirmBooking(){
+  const name=document.getElementById('mName').value.trim();
+  const email=document.getElementById('mEmail').value.trim();
+  if(!name||!email||!currentActivity)return;
+  const dp=Math.round(currentActivity.price*(1-currentActivity.disc/100));
+  if(currentActivity.slots>0)currentActivity.slots=Math.max(0,currentActivity.slots-1);
+  currentActivity.bookings=(currentActivity.bookings||0)+1;
+  document.getElementById('mSuccessMsg').innerHTML='Confirmation sent to <strong style="color:#fff">'+email+'</strong>.<br>See you on <strong style="color:#fff">'+document.getElementById('mDate').textContent.replace('📅 ','')+'</strong>!';
+  document.getElementById('mSavings').textContent='✓ CHF '+dp+' charged · You saved CHF '+(currentActivity.price-dp)+' with DoMore';
+  document.getElementById('modalStep1').style.display='none';document.getElementById('modalStep2').style.display='block';
+  renderActivities();renderMyOffers();updateStats();
+}
+
+function closeModal(){document.getElementById('bookingModal').classList.remove('open');}
+
+function showToast(msg){
+  const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),3200);
+}
+
+renderActivities();renderMyOffers();updateStats();
+</script>
+</div></body></html>
